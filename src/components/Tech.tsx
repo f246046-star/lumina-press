@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Cpu, Zap, Code2 } from "lucide-react";
+import techVideo from "@/assets/tech-video.mp4.asset.json";
 
 const items = [
   { icon: Cpu, title: "AI-assisted editor", text: "Smart suggestions that respect your voice." },
