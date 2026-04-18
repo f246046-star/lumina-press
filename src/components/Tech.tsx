@@ -64,10 +64,11 @@ export const Tech = () => {
                 loop
                 muted
                 playsInline
+                preload="auto"
                 className="absolute inset-0 w-full h-full object-cover"
               >
                 <source
-                  src="https://cdn.pixabay.com/video/2024/03/15/204306-924698132_large.mp4"
+                  src="https://videos.pexels.com/video-files/5495845/5495845-uhd_2560_1440_25fps.mp4"
                   type="video/mp4"
                 />
               </video>
