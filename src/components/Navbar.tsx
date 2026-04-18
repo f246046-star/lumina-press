@@ -29,19 +29,41 @@ export const Navbar = () => {
     >
       <div className="container-tight">
         <nav
-          className={`relative flex items-center justify-between rounded-2xl px-4 md:px-6 py-3 transition-all duration-500 backdrop-blur-xl ${
+          className={`relative rounded-2xl px-4 md:px-6 py-3 transition-all duration-500 backdrop-blur-xl ${
             scrolled
               ? "glass shadow-glass border border-white/10"
               : "bg-background/30 border border-white/5"
           }`}
         >
-          {/* Left: Nav links */}
-          <ul className="hidden lg:flex items-center gap-1 flex-1">
+          {/* Top row: logo centered, actions on the right */}
+          <div className="relative flex items-center justify-center">
+            <Logo />
+
+            <div className="absolute right-0 flex items-center gap-2 md:gap-3">
+              <a
+                href="#articles"
+                className="hidden sm:inline-flex items-center gap-1.5 rounded-full bg-accent text-accent-foreground px-5 py-2.5 text-sm font-semibold shadow-accent-glow hover:scale-105 hover:shadow-[0_0_30px_hsl(var(--accent)/0.6)] transition-all duration-300"
+              >
+                Explore <ArrowUpRight className="h-4 w-4" />
+              </a>
+              <ThemeToggle />
+              <button
+                className="lg:hidden h-10 w-10 rounded-full border border-border flex items-center justify-center"
+                onClick={() => setOpen(!open)}
+                aria-label="Menu"
+              >
+                {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+              </button>
+            </div>
+          </div>
+
+          {/* Bottom row: nav links below logo */}
+          <ul className="hidden lg:flex items-center justify-center gap-2 mt-3 pt-3 border-t border-white/10">
             {links.map((l) => (
               <li key={l.href}>
                 <a
                   href={l.href}
-                  className="relative px-4 py-2 text-sm font-medium uppercase tracking-wide text-foreground/80 hover:text-foreground transition-colors group"
+                  className="relative px-4 py-1.5 text-sm font-medium uppercase tracking-wide text-foreground/80 hover:text-foreground transition-colors group"
                 >
                   {l.label}
                   <span className="absolute left-4 right-4 -bottom-0.5 h-px bg-accent scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300" />
@@ -49,29 +71,6 @@ export const Navbar = () => {
               </li>
             ))}
           </ul>
-
-          {/* Center: Logo (absolutely centered) */}
-          <div className="lg:absolute lg:left-1/2 lg:-translate-x-1/2 flex items-center justify-center">
-            <Logo />
-          </div>
-
-          {/* Right: Explore + theme + mobile toggle */}
-          <div className="flex items-center gap-2 md:gap-3 lg:flex-1 lg:justify-end">
-            <a
-              href="#articles"
-              className="hidden sm:inline-flex items-center gap-1.5 rounded-full bg-accent text-accent-foreground px-5 py-2.5 text-sm font-semibold shadow-accent-glow hover:scale-105 hover:shadow-[0_0_30px_hsl(var(--accent)/0.6)] transition-all duration-300"
-            >
-              Explore <ArrowUpRight className="h-4 w-4" />
-            </a>
-            <ThemeToggle />
-            <button
-              className="lg:hidden h-10 w-10 rounded-full border border-border flex items-center justify-center"
-              onClick={() => setOpen(!open)}
-              aria-label="Menu"
-            >
-              {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
-            </button>
-          </div>
         </nav>
 
         {open && (

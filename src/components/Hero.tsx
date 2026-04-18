@@ -19,10 +19,11 @@ export const Hero = () => {
           className="absolute inset-0 w-full h-full object-cover scale-105"
         >
           <source
-            src="https://cdn.pixabay.com/video/2020/09/08/49375-458223405_large.mp4"
+            src="https://cdn.pixabay.com/video/2022/12/04/141052-777964394_large.mp4"
             type="video/mp4"
           />
         </video>
+        <div className="absolute inset-0 bg-black/60" />
         <div className="absolute inset-0 bg-gradient-hero" />
         <div className="absolute inset-0 bg-gradient-radial" />
       </div>
