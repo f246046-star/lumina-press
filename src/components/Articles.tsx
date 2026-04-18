@@ -52,8 +52,17 @@ export const Articles = () => {
               transition={{ delay: 0.1 }}
               className="mt-3 font-display font-bold text-4xl md:text-5xl lg:text-6xl max-w-2xl"
             >
-              Stories worth your time
+              Latest <span className="text-gradient-accent">Articles</span>
             </motion.h2>
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+              className="mt-4 text-muted-foreground max-w-xl"
+            >
+              Hand-picked stories from writers and thinkers across the web.
+            </motion.p>
           </div>
           <a
             href="#"
