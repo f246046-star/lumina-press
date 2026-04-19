@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { PenLine, Sparkles, ArrowRight } from "lucide-react";
+import writerVideo from "@/assets/hero-tech.mp4.asset.json";
 
 export const BecomeWriter = () => {
   return (
@@ -22,6 +23,22 @@ export const BecomeWriter = () => {
           transition={{ duration: 0.7 }}
           className="relative glass rounded-[2rem] border border-border/40 px-8 py-16 md:px-16 md:py-24 text-center shadow-card-soft overflow-hidden"
         >
+          {/* Background video */}
+          <div className="absolute inset-0 -z-0 overflow-hidden rounded-[2rem]">
+            <video
+              autoPlay
+              loop
+              muted
+              playsInline
+              preload="auto"
+              className="absolute inset-0 w-full h-full object-cover scale-105"
+            >
+              <source src={writerVideo.url} type="video/mp4" />
+            </video>
+            <div className="absolute inset-0 bg-background/70 backdrop-blur-[2px]" />
+            <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-background/40 to-background/80" />
+          </div>
+
           {/* Inner shimmer */}
           <div className="absolute inset-0 bg-gradient-to-br from-accent/5 via-transparent to-accent-glow/5 pointer-events-none" />
 

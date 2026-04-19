@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { ArrowRight, BookOpen, Sparkles } from "lucide-react";
-import heroVideo from "@/assets/hero-tech.mp4.asset.json";
+import heroVideo from "@/assets/hero-tech-v2.mp4.asset.json";
 
 export const Hero = () => {
   return (
