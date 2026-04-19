@@ -42,6 +42,7 @@ export const BecomeWriter = () => {
           {/* Inner shimmer */}
           <div className="absolute inset-0 bg-gradient-to-br from-accent/5 via-transparent to-accent-glow/5 pointer-events-none" />
 
+          <div className="relative z-10">
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
@@ -120,6 +121,7 @@ export const BecomeWriter = () => {
               </div>
             ))}
           </motion.div>
+          </div>
         </motion.div>
       </div>
     </section>
