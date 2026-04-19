@@ -9,19 +9,20 @@ export const Hero = () => {
       className="relative min-h-screen flex items-center justify-center overflow-hidden pt-24"
     >
       {/* Cinematic background video */}
-      <div className="absolute inset-0">
+      <div className="absolute inset-0 z-0">
         <video
           autoPlay
           loop
           muted
           playsInline
+          preload="auto"
+          onError={(e) => console.error("Hero video failed to load", e)}
           className="absolute inset-0 w-full h-full object-cover scale-105"
         >
           <source src={heroVideo.url} type="video/mp4" />
         </video>
-        <div className="absolute inset-0 bg-black/65" />
-        <div className="absolute inset-0 bg-gradient-hero" />
-        <div className="absolute inset-0 bg-gradient-radial" />
+        <div className="absolute inset-0 bg-black/40" />
+        <div className="absolute inset-0 bg-gradient-to-b from-background/30 via-transparent to-background/80" />
       </div>
 
       {/* Floating orbs */}
