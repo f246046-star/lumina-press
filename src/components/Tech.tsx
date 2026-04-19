@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Cpu, Zap, Code2 } from "lucide-react";
-import techVideo from "@/assets/tech-video.mp4.asset.json";
+const techVideo = "/videos/tech-video.mp4";
 
 const items = [
   { icon: Cpu, title: "AI-assisted editor", text: "Smart suggestions that respect your voice." },
@@ -68,7 +68,7 @@ export const Tech = () => {
                 preload="auto"
                 className="absolute inset-0 w-full h-full object-cover"
               >
-                <source src={techVideo.url} type="video/mp4" />
+                <source src={techVideo} type="video/mp4" />
               </video>
               <div className="absolute inset-0 bg-gradient-to-t from-background/70 via-transparent to-transparent" />
               <div className="absolute bottom-6 left-6 right-6">

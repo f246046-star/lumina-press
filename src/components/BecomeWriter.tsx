@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { PenLine, Sparkles, ArrowRight } from "lucide-react";
-import writerVideo from "@/assets/hero-tech.mp4.asset.json";
+const writerVideo = "/videos/hero-tech.mp4";
 
 export const BecomeWriter = () => {
   return (
@@ -33,7 +33,7 @@ export const BecomeWriter = () => {
               preload="auto"
               className="absolute inset-0 w-full h-full object-cover scale-105"
             >
-              <source src={writerVideo.url} type="video/mp4" />
+              <source src={writerVideo} type="video/mp4" />
             </video>
             <div className="absolute inset-0 bg-background/70 backdrop-blur-[2px]" />
             <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-background/40 to-background/80" />
