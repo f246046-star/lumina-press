@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { ArrowRight, BookOpen, Sparkles } from "lucide-react";
-import heroVideo from "@/assets/hero-tech-v2.mp4.asset.json";
+const heroVideo = "/videos/hero-tech-v2.mp4";
 
 export const Hero = () => {
   return (
@@ -19,7 +19,7 @@ export const Hero = () => {
           onError={(e) => console.error("Hero video failed to load", e)}
           className="absolute inset-0 w-full h-full object-cover scale-105"
         >
-          <source src={heroVideo.url} type="video/mp4" />
+          <source src={heroVideo} type="video/mp4" />
         </video>
         <div className="absolute inset-0 bg-black/40" />
         <div className="absolute inset-0 bg-gradient-to-b from-background/30 via-transparent to-background/80" />
