@@ -8,7 +8,7 @@ export const Logo = () => (
       <PenTool className="relative h-4 w-4 text-accent-foreground" strokeWidth={2.5} />
     </div>
     <span className="font-display font-extrabold text-lg tracking-tight">
-      Ink<span className="text-accent">well</span>
+      Twelve <span className="text-accent">Lords</span>
     </span>
   </a>
 );
