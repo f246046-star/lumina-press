@@ -9,6 +9,7 @@ const articles = [
     img: a1,
     cat: "Writing",
     title: "The Quiet Craft of Writing Every Day",
+    desc: "Small daily rituals that turn writing from a chore into a craft you'll never want to stop refining.",
     author: "Maya Aldrin",
     date: "Apr 12, 2026",
     read: "6 min",
@@ -17,6 +18,7 @@ const articles = [
     img: a2,
     cat: "Tech",
     title: "Why Edge Computing Will Reshape The Web",
+    desc: "How moving compute closer to users is rewriting the rules of performance, privacy, and product design.",
     author: "Daniel Cho",
     date: "Apr 09, 2026",
     read: "9 min",
@@ -25,6 +27,7 @@ const articles = [
     img: a3,
     cat: "Knowledge",
     title: "How Reading Slowly Changes Your Mind",
+    desc: "The neuroscience of deep reading — and why slowing down may be the most radical productivity hack.",
     author: "Iris Bennett",
     date: "Apr 02, 2026",
     read: "5 min",
@@ -99,6 +102,9 @@ export const Articles = () => {
                 <h3 className="font-display font-bold text-xl leading-snug group-hover:text-accent transition-colors">
                   {a.title}
                 </h3>
+                <p className="mt-3 text-sm text-muted-foreground leading-relaxed line-clamp-2">
+                  {a.desc}
+                </p>
                 <div className="mt-5 flex items-center justify-between text-sm text-muted-foreground">
                   <span className="font-medium text-foreground">{a.author}</span>
                   <div className="flex items-center gap-3">
