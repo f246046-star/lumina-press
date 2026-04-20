@@ -9,7 +9,7 @@ const links = [
   { label: "Books", href: "/#knowledge" },
   { label: "Tech", href: "/#tech" },
   { label: "About Us", href: "/about" },
-  { label: "Contact Us", href: "/#footer" },
+  { label: "Contact Us", href: "/contact" },
 ];
 
 export const Navbar = () => {
