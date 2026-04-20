@@ -91,7 +91,7 @@ export const Articles = () => {
                   alt={a.title}
                   loading="lazy"
                   width={1024}
-                  height={640}
+                  height={768}
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                 />
                 <span className="absolute top-4 left-4 px-3 py-1 rounded-full bg-accent text-accent-foreground text-xs font-semibold">
@@ -117,6 +117,87 @@ export const Articles = () => {
             </motion.article>
           ))}
         </div>
+
+        {/* Featured Book */}
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7 }}
+          className="mt-24 md:mt-32"
+        >
+          <div className="flex items-end justify-between flex-wrap gap-4 mb-10">
+            <div>
+              <span className="text-accent text-sm font-semibold tracking-widest uppercase">Featured Book</span>
+              <h3 className="mt-3 font-display font-bold text-3xl md:text-4xl">
+                Now reading from <span className="text-gradient-accent">Twelve Lords</span>
+              </h3>
+            </div>
+          </div>
+
+          <div className="grid lg:grid-cols-12 gap-10 items-center glass rounded-3xl p-6 md:p-10 border border-white/10 shadow-card-soft">
+            <div className="lg:col-span-5">
+              <div className="relative aspect-[3/4] rounded-2xl overflow-hidden bg-gradient-to-br from-accent/30 via-background to-secondary border border-white/10 shadow-card-hover">
+                <div className="absolute inset-0 flex flex-col items-center justify-center p-8 text-center">
+                  <span className="text-[10px] uppercase tracking-[0.3em] text-accent">Non-Fiction</span>
+                  <h4 className="mt-6 font-display font-bold text-2xl md:text-3xl leading-tight">
+                    THE SELF<br />AS WITNESS
+                  </h4>
+                  <p className="mt-4 text-xs text-muted-foreground italic max-w-[80%]">
+                    Exploring how the self becomes both subject and suspect in its own gaze.
+                  </p>
+                  <div className="mt-auto pt-8 text-xs uppercase tracking-widest text-foreground/70">
+                    by Raza
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="lg:col-span-7">
+              <span className="inline-flex items-center gap-2 rounded-full border border-border bg-secondary/50 px-3 py-1 text-[10px] font-medium uppercase tracking-widest text-muted-foreground">
+                Non-Fiction · By Raza
+              </span>
+              <h4 className="mt-4 font-display font-bold text-3xl md:text-4xl leading-tight">
+                The Self as Witness
+              </h4>
+              <p className="mt-2 text-base text-accent italic">
+                Exploring how the self becomes both subject and suspect in its own gaze.
+              </p>
+              <p className="mt-5 text-muted-foreground leading-relaxed">
+                The Self as Witness explores the timeless struggle for self-mastery—the internal battle that has defined the human condition across history. Drawing from the wisdom of great thinkers, it distills profound philosophies into a clear, practical framework, transforming ancient insight into actionable discipline.
+              </p>
+
+              <div className="mt-8 grid sm:grid-cols-3 gap-4">
+                {[
+                  { n: "01", t: "Recognize the Inner Adversary", d: "Identify hidden patterns and impulses that undermine clarity." },
+                  { n: "02", t: "Deep Self-Awareness", d: "Understand your thoughts, emotions, and behaviors at their root." },
+                  { n: "03", t: "A Strategy for Mastery", d: "A disciplined framework to regulate and transcend inner limits." },
+                ].map((b) => (
+                  <div key={b.n} className="rounded-2xl bg-card border border-border p-5 hover:border-accent/50 transition-colors">
+                    <div className="text-accent font-display font-bold text-sm">{b.n}</div>
+                    <div className="mt-2 font-display font-semibold text-sm">{b.t}</div>
+                    <p className="mt-2 text-xs text-muted-foreground leading-relaxed">{b.d}</p>
+                  </div>
+                ))}
+              </div>
+
+              <div className="mt-8 flex flex-wrap items-center gap-3">
+                <a
+                  href="/contact"
+                  className="inline-flex items-center gap-2 rounded-full bg-accent text-accent-foreground px-6 py-3 text-sm font-semibold shadow-accent-glow hover:scale-105 transition-all"
+                >
+                  Get the Book
+                </a>
+                <a
+                  href="#articles"
+                  className="inline-flex items-center gap-2 rounded-full border border-border px-6 py-3 text-sm font-semibold hover:border-accent hover:text-accent transition-all"
+                >
+                  Read Excerpt
+                </a>
+              </div>
+            </div>
+          </div>
+        </motion.div>
       </div>
     </section>
   );
