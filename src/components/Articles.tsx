@@ -82,7 +82,11 @@ export const Articles = () => {
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-7">
-          {articles.map((a, i) => (
+          {articles.map((a, i) => {
+            const isInternal = a.href?.startsWith("/");
+            const Wrapper: any = isInternal ? Link : "a";
+            const wrapperProps = isInternal ? { to: a.href } : { href: a.href };
+            return (
             <motion.article
               key={a.title}
               initial={{ opacity: 0, y: 50 }}
@@ -91,37 +95,45 @@ export const Articles = () => {
               transition={{ duration: 0.6, delay: i * 0.1 }}
               className="group relative bg-card rounded-2xl overflow-hidden border border-border shadow-card-soft hover:shadow-card-hover hover:-translate-y-2 transition-all duration-500"
             >
-              <div className="relative aspect-[4/3] overflow-hidden">
-                <img
-                  src={a.img}
-                  alt={a.title}
-                  loading="lazy"
-                  width={1024}
-                  height={768}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                />
-                <span className="absolute top-4 left-4 px-3 py-1 rounded-full bg-accent text-accent-foreground text-xs font-semibold">
-                  {a.cat}
-                </span>
-              </div>
-              <div className="p-6">
-                <h3 className="font-display font-bold text-xl leading-snug group-hover:text-accent transition-colors">
-                  {a.title}
-                </h3>
-                <p className="mt-3 text-sm text-muted-foreground leading-relaxed line-clamp-2">
-                  {a.desc}
-                </p>
-                <div className="mt-5 flex items-center justify-between text-sm text-muted-foreground">
-                  <span className="font-medium text-foreground">{a.author}</span>
-                  <div className="flex items-center gap-3">
-                    <span className="inline-flex items-center gap-1"><Calendar className="h-3.5 w-3.5" /> {a.date}</span>
-                    <span className="inline-flex items-center gap-1"><Clock className="h-3.5 w-3.5" /> {a.read}</span>
+              <Wrapper {...wrapperProps} className="block">
+                <div className="relative aspect-[4/3] overflow-hidden">
+                  <img
+                    src={a.img}
+                    alt={a.title}
+                    loading="lazy"
+                    width={1024}
+                    height={768}
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                  />
+                  <span className="absolute top-4 left-4 px-3 py-1 rounded-full bg-accent text-accent-foreground text-xs font-semibold">
+                    {a.cat}
+                  </span>
+                  {a.featured && (
+                    <span className="absolute top-4 right-4 px-3 py-1 rounded-full bg-background/80 backdrop-blur border border-accent/40 text-accent text-[10px] font-semibold uppercase tracking-widest">
+                      New
+                    </span>
+                  )}
+                </div>
+                <div className="p-6">
+                  <h3 className="font-display font-bold text-xl leading-snug group-hover:text-accent transition-colors">
+                    {a.title}
+                  </h3>
+                  <p className="mt-3 text-sm text-muted-foreground leading-relaxed line-clamp-2">
+                    {a.desc}
+                  </p>
+                  <div className="mt-5 flex items-center justify-between text-sm text-muted-foreground">
+                    <span className="font-medium text-foreground">{a.author}</span>
+                    <div className="flex items-center gap-3">
+                      <span className="inline-flex items-center gap-1"><Calendar className="h-3.5 w-3.5" /> {a.date}</span>
+                      <span className="inline-flex items-center gap-1"><Clock className="h-3.5 w-3.5" /> {a.read}</span>
+                    </div>
                   </div>
                 </div>
-              </div>
+              </Wrapper>
               <span className="absolute inset-x-0 bottom-0 h-0.5 bg-gradient-accent scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
             </motion.article>
-          ))}
+            );
+          })}
         </div>
 
         {/* Featured Book */}
@@ -143,19 +155,15 @@ export const Articles = () => {
 
           <div className="grid lg:grid-cols-12 gap-10 items-center glass rounded-3xl p-6 md:p-10 border border-white/10 shadow-card-soft">
             <div className="lg:col-span-5">
-              <div className="relative aspect-[3/4] rounded-2xl overflow-hidden bg-gradient-to-br from-accent/30 via-background to-secondary border border-white/10 shadow-card-hover">
-                <div className="absolute inset-0 flex flex-col items-center justify-center p-8 text-center">
-                  <span className="text-[10px] uppercase tracking-[0.3em] text-accent">Non-Fiction</span>
-                  <h4 className="mt-6 font-display font-bold text-2xl md:text-3xl leading-tight">
-                    THE SELF<br />AS WITNESS
-                  </h4>
-                  <p className="mt-4 text-xs text-muted-foreground italic max-w-[80%]">
-                    Exploring how the self becomes both subject and suspect in its own gaze.
-                  </p>
-                  <div className="mt-auto pt-8 text-xs uppercase tracking-widest text-foreground/70">
-                    by Raza
-                  </div>
-                </div>
+              <div className="relative aspect-[3/4] rounded-2xl overflow-hidden border border-white/10 shadow-card-hover">
+                <img
+                  src={bookCover}
+                  alt="The Self as Witness by Raza — book cover"
+                  loading="lazy"
+                  width={960}
+                  height={1280}
+                  className="w-full h-full object-cover"
+                />
               </div>
             </div>
 
