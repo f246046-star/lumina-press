@@ -4,10 +4,12 @@ import { ThemeToggle } from "./ThemeToggle";
 import { Menu, X, ArrowUpRight } from "lucide-react";
 
 const links = [
-  { label: "Home", href: "#home" },
-  { label: "Articles", href: "#articles" },
-  { label: "About Us", href: "#knowledge" },
-  { label: "Contact Us", href: "#footer" },
+  { label: "Home", href: "/#home" },
+  { label: "Articles", href: "/#articles" },
+  { label: "Books", href: "/#knowledge" },
+  { label: "Tech", href: "/#tech" },
+  { label: "About Us", href: "/about" },
+  { label: "Contact Us", href: "/#footer" },
 ];
 
 export const Navbar = () => {
