@@ -1,18 +1,22 @@
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import { Calendar, Clock, ArrowUpRight } from "lucide-react";
-import a1 from "@/assets/article-1.jpg";
+import cyberHero from "@/assets/article-cyber-hero.jpg";
 import a2 from "@/assets/article-2.jpg";
 import a3 from "@/assets/article-3.jpg";
+import bookCover from "@/assets/book-self-witness.jpg";
 
 const articles = [
   {
-    img: a1,
-    cat: "Writing",
-    title: "The Quiet Craft of Writing Every Day",
-    desc: "Small daily rituals that turn writing from a chore into a craft you'll never want to stop refining.",
-    author: "Maya Aldrin",
-    date: "Apr 12, 2026",
-    read: "6 min",
+    img: cyberHero,
+    cat: "Cybersecurity",
+    title: "As Cyber Threats Accelerate, Human Awareness Remains the Critical Weakness",
+    desc: "In a world engineered for digital convenience, the failure to build widespread cyber awareness is leaving individuals dangerously exposed.",
+    author: "Muhammad Raza",
+    date: "Apr 18, 2026",
+    read: "12 min",
+    href: "/articles/cyber-threats-awareness",
+    featured: true,
   },
   {
     img: a2,
@@ -22,6 +26,7 @@ const articles = [
     author: "Daniel Cho",
     date: "Apr 09, 2026",
     read: "9 min",
+    href: "#articles",
   },
   {
     img: a3,
@@ -31,6 +36,7 @@ const articles = [
     author: "Iris Bennett",
     date: "Apr 02, 2026",
     read: "5 min",
+    href: "#articles",
   },
 ];
 
