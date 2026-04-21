@@ -47,7 +47,7 @@ export const Articles = () => {
         </div>
 
         {/* Asymmetric editorial split */}
-        <div className="grid lg:grid-cols-12 gap-6 items-stretch">
+        <div className="grid lg:grid-cols-12 gap-5 items-stretch max-w-5xl mx-auto">
           {/* LEFT — Article (8 cols) */}
           <motion.article
             initial={{ opacity: 0, y: 30 }}
@@ -62,7 +62,7 @@ export const Articles = () => {
                   № 01 — Article
                 </div>
 
-                <div className="relative aspect-[16/10] overflow-hidden">
+                <div className="relative aspect-[16/9] overflow-hidden">
                   <img
                     src={cyberHero}
                     alt="As Cyber Threats Accelerate"
@@ -72,33 +72,33 @@ export const Articles = () => {
                   <div className="absolute inset-0 bg-gradient-to-t from-card via-card/60 to-transparent" />
                 </div>
 
-                <div className="relative p-5 md:p-7 -mt-16">
-                  <div className="flex items-center gap-2 mb-3">
-                    <span className="inline-flex items-center gap-1.5 rounded-sm bg-accent text-accent-foreground px-2 py-0.5 text-[9px] font-bold uppercase tracking-widest">
-                      <ShieldAlert className="h-3 w-3" /> Cybersecurity
+                <div className="relative p-4 md:p-5 -mt-10">
+                  <div className="flex items-center gap-2 mb-2">
+                    <span className="inline-flex items-center gap-1 rounded-sm bg-accent text-accent-foreground px-1.5 py-0.5 text-[8px] font-bold uppercase tracking-widest">
+                      <ShieldAlert className="h-2.5 w-2.5" /> Cybersecurity
                     </span>
-                    <span className="font-mono text-[9px] uppercase tracking-[0.25em] text-muted-foreground">
+                    <span className="font-mono text-[8px] uppercase tracking-[0.25em] text-muted-foreground">
                       12 min · Apr 18
                     </span>
                   </div>
 
-                  <h3 className="font-display font-bold text-xl md:text-2xl lg:text-3xl leading-[1.1] tracking-tight max-w-xl group-hover/article:text-accent transition-colors duration-500">
+                  <h3 className="font-display font-bold text-base md:text-lg leading-snug tracking-tight max-w-md group-hover/article:text-accent transition-colors duration-500">
                     As Cyber Threats Accelerate, Human Awareness Remains the Critical Weakness
                   </h3>
 
-                  <p className="mt-3 text-sm text-muted-foreground leading-relaxed max-w-lg line-clamp-2">
+                  <p className="mt-2 text-xs text-muted-foreground leading-relaxed max-w-md line-clamp-2">
                     In a world engineered for digital convenience, the failure to build widespread cyber awareness is leaving individuals dangerously exposed.
                   </p>
 
-                  <div className="mt-5 flex items-center justify-between gap-4 pt-4 border-t border-dashed border-border/60">
-                    <div className="flex items-center gap-2.5">
-                      <div className="h-7 w-7 rounded-full bg-gradient-to-br from-accent to-purple-500 flex items-center justify-center font-display font-bold text-[10px] text-accent-foreground">
+                  <div className="mt-3 flex items-center justify-between gap-3 pt-3 border-t border-dashed border-border/60">
+                    <div className="flex items-center gap-2">
+                      <div className="h-6 w-6 rounded-full bg-gradient-to-br from-accent to-purple-500 flex items-center justify-center font-display font-bold text-[9px] text-accent-foreground">
                         MR
                       </div>
-                      <span className="text-xs font-semibold">Muhammad Raza</span>
+                      <span className="text-[11px] font-semibold">Muhammad Raza</span>
                     </div>
-                    <span className="inline-flex items-center gap-1.5 text-xs font-semibold text-accent group-hover/article:gap-2.5 transition-all">
-                      Read <ArrowUpRight className="h-3.5 w-3.5" />
+                    <span className="inline-flex items-center gap-1 text-[11px] font-semibold text-accent group-hover/article:gap-2 transition-all">
+                      Read <ArrowUpRight className="h-3 w-3" />
                     </span>
                   </div>
                 </div>
@@ -115,22 +115,22 @@ export const Articles = () => {
             className="lg:col-span-4 group/book relative flex flex-col"
           >
             <Link to="/books/self-as-witness" className="block h-full">
-              <div className="relative h-full rounded-2xl overflow-hidden border border-white/10 bg-gradient-to-b from-card/60 via-card/30 to-card/60 backdrop-blur-sm p-5 md:p-6 transition-all duration-500 group-hover/book:border-purple-400/40">
-                <div className="absolute right-2 top-6 bottom-6 flex items-center">
-                  <span className="font-mono text-[9px] uppercase tracking-[0.4em] text-muted-foreground rotate-180" style={{ writingMode: "vertical-rl" }}>
+              <div className="relative h-full rounded-2xl overflow-hidden border border-white/10 bg-gradient-to-b from-card/60 via-card/30 to-card/60 backdrop-blur-sm p-4 transition-all duration-500 group-hover/book:border-purple-400/40">
+                <div className="absolute right-1.5 top-4 bottom-4 flex items-center">
+                  <span className="font-mono text-[8px] uppercase tracking-[0.4em] text-muted-foreground rotate-180" style={{ writingMode: "vertical-rl" }}>
                     № 02 — Book
                   </span>
                 </div>
 
-                <div className="flex items-center gap-2 mb-4">
-                  <BookOpen className="h-3.5 w-3.5 text-purple-400" />
-                  <span className="font-mono text-[9px] uppercase tracking-[0.3em] text-purple-300">
+                <div className="flex items-center gap-1.5 mb-3">
+                  <BookOpen className="h-3 w-3 text-purple-400" />
+                  <span className="font-mono text-[8px] uppercase tracking-[0.3em] text-purple-300">
                     Non-Fiction
                   </span>
                 </div>
 
-                <div className="relative mx-auto w-[65%] aspect-[3/4] mb-4">
-                  <div aria-hidden className="absolute inset-0 translate-y-4 scale-95 rounded-xl bg-purple-500/30 blur-2xl" />
+                <div className="relative mx-auto w-[55%] aspect-[3/4] mb-3">
+                  <div aria-hidden className="absolute inset-0 translate-y-3 scale-95 rounded-xl bg-purple-500/30 blur-2xl" />
                   <div className="relative h-full rounded-md overflow-hidden border border-white/10 shadow-[0_20px_40px_-12px_rgba(0,0,0,0.6)] transition-transform duration-700 group-hover/book:-translate-y-1.5 group-hover/book:rotate-[-2deg]">
                     <img
                       src={bookCover}
@@ -142,19 +142,19 @@ export const Articles = () => {
                 </div>
 
                 <div className="text-center">
-                  <h3 className="font-display font-bold text-base md:text-lg leading-tight">
+                  <h3 className="font-display font-bold text-sm md:text-base leading-tight">
                     The Self as Witness
                   </h3>
-                  <p className="mt-1 text-[10px] text-accent italic px-2">
+                  <p className="mt-1 text-[9px] text-accent italic px-2">
                     Subject and suspect in its own gaze.
                   </p>
-                  <p className="mt-1.5 font-mono text-[9px] uppercase tracking-[0.25em] text-muted-foreground">
+                  <p className="mt-1 font-mono text-[8px] uppercase tracking-[0.25em] text-muted-foreground">
                     By Raza
                   </p>
                 </div>
 
-                <div className="mt-4 inline-flex items-center justify-center gap-1.5 w-full rounded-full border border-accent/40 bg-accent/10 text-accent px-4 py-2 text-xs font-semibold group-hover/book:bg-accent group-hover/book:text-accent-foreground transition-all">
-                  View Details <ArrowUpRight className="h-3.5 w-3.5" />
+                <div className="mt-3 inline-flex items-center justify-center gap-1 w-full rounded-full border border-accent/40 bg-accent/10 text-accent px-3 py-1.5 text-[11px] font-semibold group-hover/book:bg-accent group-hover/book:text-accent-foreground transition-all">
+                  View Details <ArrowUpRight className="h-3 w-3" />
                 </div>
               </div>
             </Link>
