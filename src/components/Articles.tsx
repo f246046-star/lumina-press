@@ -6,7 +6,7 @@ import bookCover from "@/assets/book-self-witness.jpg";
 
 export const Articles = () => {
   return (
-    <section id="articles" className="relative py-16 md:py-24 overflow-hidden">
+    <section id="articles" className="relative py-12 md:py-16 overflow-hidden">
       {/* Background grid + glows */}
       <div aria-hidden className="pointer-events-none absolute inset-0">
         <div
@@ -23,8 +23,8 @@ export const Articles = () => {
 
       <div className="container-tight relative">
         {/* Editorial header — magazine masthead */}
-        <div className="relative mb-10">
-          <div className="flex items-center gap-4 text-[10px] font-mono uppercase tracking-[0.3em] text-muted-foreground">
+        <div className="relative mb-8">
+          <div className="flex items-center gap-3 text-[9px] font-mono uppercase tracking-[0.3em] text-muted-foreground">
             <span className="h-px flex-1 bg-gradient-to-r from-transparent via-border to-transparent" />
             <span className="text-accent">Issue 04 · 2026</span>
             <span className="h-px flex-1 bg-gradient-to-r from-transparent via-border to-transparent" />
@@ -33,15 +33,15 @@ export const Articles = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="mt-4 font-display font-black text-center text-3xl md:text-5xl leading-[0.95] tracking-tight"
+            className="mt-3 font-display font-black text-center text-2xl md:text-3xl leading-[1] tracking-tight"
           >
             The <span className="italic font-light text-gradient-accent">Latest</span>{" "}
             <span className="relative inline-block">
               Dispatch
-              <Sparkles className="absolute -top-1 -right-6 h-4 w-4 text-accent" />
+              <Sparkles className="absolute -top-1 -right-4 h-3 w-3 text-accent" />
             </span>
           </motion.h2>
-          <p className="mt-3 text-center text-sm text-muted-foreground max-w-md mx-auto">
+          <p className="mt-2 text-center text-xs text-muted-foreground max-w-md mx-auto">
             One article. One book. Two perspectives on what it means to think clearly in a fractured age.
           </p>
         </div>
