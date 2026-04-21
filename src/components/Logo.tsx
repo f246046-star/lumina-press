@@ -1,14 +1,19 @@
-import { PenTool } from "lucide-react";
+import { Link } from "react-router-dom";
+import logoImg from "@/assets/logo-twelve-lords.png";
 
 export const Logo = () => (
-  <a href="#home" className="flex items-center gap-3 group">
-    <div className="relative h-10 w-10 flex items-center justify-center">
-      <span className="absolute inset-0 rounded-full border border-dashed border-accent/60 animate-spin-slow" />
-      <span className="absolute inset-1 rounded-full bg-gradient-accent opacity-90 group-hover:opacity-100 transition-opacity" />
-      <PenTool className="relative h-4 w-4 text-accent-foreground" strokeWidth={2.5} />
+  <Link to="/" className="flex items-center gap-3 group" aria-label="Twelve Lords home">
+    <div className="relative h-12 w-12 flex items-center justify-center">
+      <span className="absolute inset-0 rounded-full border border-dashed border-accent/50 animate-spin-slow" />
+      <span className="absolute inset-1 rounded-full border border-accent/20" />
+      <img
+        src={logoImg}
+        alt="Twelve Lords"
+        className="relative h-9 w-9 object-contain animate-spin-slow"
+      />
     </div>
     <span className="font-display font-extrabold text-lg tracking-tight">
       Twelve <span className="text-accent">Lords</span>
     </span>
-  </a>
+  </Link>
 );
