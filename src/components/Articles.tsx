@@ -1,191 +1,187 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { Calendar, Clock, ArrowUpRight, BookOpen, ShieldAlert } from "lucide-react";
+import { ArrowUpRight, ShieldAlert, BookOpen, Sparkles } from "lucide-react";
 import cyberHero from "@/assets/article-cyber-hero.jpg";
 import bookCover from "@/assets/book-self-witness.jpg";
 
 export const Articles = () => {
   return (
     <section id="articles" className="relative py-28 md:py-36 overflow-hidden">
-      {/* Ambient background glows */}
+      {/* Background grid + glows */}
       <div aria-hidden className="pointer-events-none absolute inset-0">
-        <div className="absolute top-1/3 left-1/4 h-[420px] w-[420px] rounded-full bg-accent/20 blur-[120px]" />
-        <div className="absolute bottom-1/4 right-1/5 h-[360px] w-[360px] rounded-full bg-purple-500/20 blur-[120px]" />
-        <div className="absolute top-1/2 right-1/3 h-[280px] w-[280px] rounded-full bg-blue-500/10 blur-[100px]" />
+        <div
+          className="absolute inset-0 opacity-[0.035]"
+          style={{
+            backgroundImage:
+              "linear-gradient(hsl(var(--foreground)) 1px, transparent 1px), linear-gradient(90deg, hsl(var(--foreground)) 1px, transparent 1px)",
+            backgroundSize: "64px 64px",
+          }}
+        />
+        <div className="absolute -top-20 left-1/3 h-[480px] w-[480px] rounded-full bg-accent/15 blur-[140px]" />
+        <div className="absolute bottom-0 right-10 h-[420px] w-[420px] rounded-full bg-purple-500/15 blur-[140px]" />
       </div>
 
       <div className="container-tight relative">
-        {/* Header */}
-        <div className="flex items-end justify-between flex-wrap gap-6 mb-16">
-          <div>
-            <motion.span
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="inline-block text-accent text-sm font-semibold tracking-widest uppercase"
-            >
-              Featured
-            </motion.span>
-            <motion.h2
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.1 }}
-              className="mt-3 font-display font-bold text-4xl md:text-5xl lg:text-6xl max-w-2xl"
-            >
-              Latest <span className="text-gradient-accent">Content</span>
-            </motion.h2>
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.2 }}
-              className="mt-4 text-muted-foreground max-w-xl"
-            >
-              An editorial showcase of our newest article and our featured book — layered for depth, built for the curious mind.
-            </motion.p>
+        {/* Editorial header — magazine masthead */}
+        <div className="relative mb-20">
+          <div className="flex items-center gap-4 text-[11px] font-mono uppercase tracking-[0.3em] text-muted-foreground">
+            <span className="h-px flex-1 bg-gradient-to-r from-transparent via-border to-transparent" />
+            <span className="text-accent">Issue 04 · 2026</span>
+            <span className="h-px flex-1 bg-gradient-to-r from-transparent via-border to-transparent" />
           </div>
-          <Link
-            to="/articles/cyber-threats-awareness"
-            className="inline-flex items-center gap-2 text-sm font-semibold hover:text-accent transition-colors"
+          <motion.h2
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="mt-6 font-display font-black text-center text-5xl md:text-7xl lg:text-[5.5rem] leading-[0.95] tracking-tight"
           >
-            Read full article <ArrowUpRight className="h-4 w-4" />
-          </Link>
+            The <span className="italic font-light text-gradient-accent">Latest</span>
+            <br />
+            <span className="relative inline-block">
+              Dispatch
+              <Sparkles className="absolute -top-2 -right-8 h-6 w-6 text-accent" />
+            </span>
+          </motion.h2>
+          <p className="mt-6 text-center text-muted-foreground max-w-xl mx-auto">
+            One article. One book. Two perspectives on what it means to think clearly in a fractured age.
+          </p>
         </div>
 
-        {/* Layered Showcase */}
-        <div className="relative mx-auto max-w-6xl min-h-[640px] md:min-h-[600px] lg:min-h-[560px]">
-          {/* BOOK CARD — back-right, slightly rotated */}
-          <motion.div
-            initial={{ opacity: 0, x: 60, rotate: -3 }}
-            whileInView={{ opacity: 1, x: 0, rotate: -3 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="group/book absolute right-0 top-16 md:top-8 w-[88%] sm:w-[70%] md:w-[46%] lg:w-[44%] z-10 hover:z-30"
-            style={{ transformOrigin: "center" }}
-          >
-            <div className="relative rounded-3xl border border-white/10 bg-card/40 backdrop-blur-xl p-6 md:p-7 shadow-[0_30px_80px_-20px_hsl(var(--accent)/0.35)] transition-all duration-500 ease-out group-hover/book:rotate-0 group-hover/book:-translate-y-3 group-hover/book:translate-x-0 group-hover/book:shadow-[0_40px_100px_-20px_hsl(var(--accent)/0.55)]">
-              {/* Neon outline glow */}
-              <div aria-hidden className="absolute -inset-px rounded-3xl bg-gradient-to-br from-accent/30 via-purple-500/20 to-blue-500/20 opacity-60 blur-md -z-10" />
-
-              <div className="flex items-center gap-2 mb-5">
-                <span className="inline-flex items-center gap-1.5 rounded-full bg-purple-500/15 border border-purple-400/30 px-3 py-1 text-[10px] font-semibold uppercase tracking-widest text-purple-300">
-                  <BookOpen className="h-3 w-3" /> Featured Book
-                </span>
-                <span className="rounded-full border border-border/60 px-2.5 py-1 text-[10px] font-medium uppercase tracking-widest text-muted-foreground">
-                  Non-Fiction
-                </span>
-              </div>
-
-              <div className="relative aspect-[3/4] rounded-2xl overflow-hidden border border-white/10 shadow-card-hover mb-5">
-                <img
-                  src={bookCover}
-                  alt="The Self as Witness — book cover by Muhammad Raza"
-                  loading="lazy"
-                  width={960}
-                  height={1280}
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover/book:scale-[1.03]"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-background/70 via-transparent to-transparent" />
-              </div>
-
-              <h3 className="font-display font-bold text-2xl md:text-[1.6rem] leading-tight">
-                The Self as Witness
-              </h3>
-              <p className="mt-2 text-sm text-accent italic">
-                Exploring how the self becomes both subject and suspect in its own gaze.
-              </p>
-              <p className="mt-3 text-xs text-muted-foreground">By <span className="text-foreground font-medium">Muhammad Raza</span></p>
-
-              <div className="mt-5 grid grid-cols-3 gap-2">
-                {[
-                  { n: "01", t: "Inner Adversary" },
-                  { n: "02", t: "Self-Awareness" },
-                  { n: "03", t: "Inner Mastery" },
-                ].map((b) => (
-                  <div key={b.n} className="rounded-xl bg-secondary/40 border border-border/60 p-2.5 text-center">
-                    <div className="text-accent font-display font-bold text-[10px]">{b.n}</div>
-                    <div className="mt-0.5 font-display font-semibold text-[11px] leading-tight">{b.t}</div>
-                  </div>
-                ))}
-              </div>
-
-              <a
-                href="/contact"
-                className="mt-6 inline-flex items-center justify-center gap-2 w-full rounded-full bg-accent text-accent-foreground px-5 py-2.5 text-sm font-semibold shadow-accent-glow hover:scale-[1.02] transition-all"
-              >
-                Get the Book <ArrowUpRight className="h-4 w-4" />
-              </a>
-            </div>
-          </motion.div>
-
-          {/* ARTICLE CARD — front, center-left, dominant */}
+        {/* Asymmetric editorial split */}
+        <div className="grid lg:grid-cols-12 gap-8 lg:gap-6 items-stretch">
+          {/* LEFT — Article (8 cols, tall hero-style) */}
           <motion.article
-            initial={{ opacity: 0, y: 60 }}
+            initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7 }}
-            className="group/article relative md:absolute md:left-0 md:top-0 w-full md:w-[62%] lg:w-[60%] z-20 hover:z-40 mt-[420px] md:mt-0"
+            className="lg:col-span-8 group/article relative"
           >
-            <Link to="/articles/cyber-threats-awareness" className="block">
-              <div className="relative rounded-3xl overflow-hidden border border-white/10 bg-card/50 backdrop-blur-xl shadow-[0_40px_120px_-30px_hsl(var(--accent)/0.5)] transition-all duration-500 ease-out group-hover/article:-translate-y-2 group-hover/article:shadow-[0_50px_140px_-25px_hsl(var(--accent)/0.7)]">
-                {/* Outer neon ring */}
-                <div aria-hidden className="absolute -inset-px rounded-3xl bg-gradient-to-br from-accent/50 via-red-500/30 to-purple-500/30 opacity-70 blur-lg -z-10" />
-
-                <div className="relative aspect-[16/10] overflow-hidden">
-                  <img
-                    src={cyberHero}
-                    alt="As Cyber Threats Accelerate, Human Awareness Remains the Critical Weakness"
-                    loading="lazy"
-                    width={1600}
-                    height={1000}
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover/article:scale-[1.05]"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent" />
-
-                  {/* Tags */}
-                  <div className="absolute top-5 left-5 flex flex-wrap gap-2">
-                    <span className="inline-flex items-center gap-1.5 rounded-full bg-accent/90 backdrop-blur px-3 py-1.5 text-xs font-semibold text-accent-foreground shadow-accent-glow">
-                      <ShieldAlert className="h-3.5 w-3.5" /> Cybersecurity
-                    </span>
-                    <span className="inline-flex items-center rounded-full bg-background/70 backdrop-blur border border-white/15 px-3 py-1.5 text-[10px] font-semibold uppercase tracking-widest text-foreground">
-                      Intelligence
-                    </span>
-                  </div>
-                  <span className="absolute top-5 right-5 px-3 py-1.5 rounded-full bg-background/70 backdrop-blur border border-accent/40 text-accent text-[10px] font-semibold uppercase tracking-widest">
-                    New
-                  </span>
+            <Link to="/articles/cyber-threats-awareness" className="block h-full">
+              <div className="relative h-full rounded-[2rem] overflow-hidden border border-white/10 bg-card/40 backdrop-blur-sm transition-all duration-500 group-hover/article:border-accent/40">
+                {/* Number marker */}
+                <div className="absolute top-6 left-6 z-20 font-mono text-[10px] uppercase tracking-[0.3em] text-accent">
+                  № 01 — Article
                 </div>
 
-                <div className="relative p-7 md:p-9">
-                  <h3 className="font-display font-bold text-2xl md:text-3xl lg:text-[2rem] leading-tight group-hover/article:text-accent transition-colors">
+                {/* Image */}
+                <div className="relative aspect-[16/11] overflow-hidden">
+                  <img
+                    src={cyberHero}
+                    alt="As Cyber Threats Accelerate"
+                    loading="lazy"
+                    className="w-full h-full object-cover transition-transform duration-[1.2s] group-hover/article:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-card via-card/60 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-r from-accent/10 via-transparent to-purple-500/10 mix-blend-overlay" />
+                </div>
+
+                {/* Content */}
+                <div className="relative p-8 md:p-10 -mt-20 md:-mt-28">
+                  <div className="flex items-center gap-2 mb-5">
+                    <span className="inline-flex items-center gap-1.5 rounded-sm bg-accent text-accent-foreground px-2.5 py-1 text-[10px] font-bold uppercase tracking-widest">
+                      <ShieldAlert className="h-3 w-3" /> Cybersecurity
+                    </span>
+                    <span className="font-mono text-[10px] uppercase tracking-[0.25em] text-muted-foreground">
+                      12 min read · Apr 18
+                    </span>
+                  </div>
+
+                  <h3 className="font-display font-bold text-3xl md:text-4xl lg:text-5xl leading-[1.05] tracking-tight max-w-2xl group-hover/article:text-accent transition-colors duration-500">
                     As Cyber Threats Accelerate, Human Awareness Remains the Critical Weakness
                   </h3>
-                  <p className="mt-4 text-sm md:text-base text-muted-foreground leading-relaxed line-clamp-3">
-                    In a world engineered for digital convenience, the failure to build widespread cyber awareness is leaving individuals dangerously exposed to engineered manipulation and silent breaches.
+
+                  <p className="mt-5 text-base text-muted-foreground leading-relaxed max-w-xl line-clamp-2">
+                    In a world engineered for digital convenience, the failure to build widespread cyber awareness is leaving individuals dangerously exposed.
                   </p>
 
-                  <div className="mt-6 flex items-center justify-between flex-wrap gap-4 pt-5 border-t border-border/60">
+                  <div className="mt-8 flex items-center justify-between gap-4 pt-6 border-t border-dashed border-border/60">
                     <div className="flex items-center gap-3">
-                      <div className="h-10 w-10 rounded-full bg-gradient-to-br from-accent to-purple-500 flex items-center justify-center font-display font-bold text-sm text-accent-foreground">
+                      <div className="h-9 w-9 rounded-full bg-gradient-to-br from-accent to-purple-500 flex items-center justify-center font-display font-bold text-xs text-accent-foreground">
                         MR
                       </div>
-                      <div>
-                        <div className="text-sm font-semibold">Muhammad Raza</div>
-                        <div className="text-xs text-muted-foreground inline-flex items-center gap-3">
-                          <span className="inline-flex items-center gap-1"><Calendar className="h-3 w-3" /> Apr 18, 2026</span>
-                          <span className="inline-flex items-center gap-1"><Clock className="h-3 w-3" /> 12 min</span>
-                        </div>
-                      </div>
+                      <span className="text-sm font-semibold">Muhammad Raza</span>
                     </div>
-                    <span className="inline-flex items-center gap-2 text-sm font-semibold text-accent">
-                      Read article <ArrowUpRight className="h-4 w-4 transition-transform group-hover/article:translate-x-1 group-hover/article:-translate-y-1" />
+                    <span className="inline-flex items-center gap-2 text-sm font-semibold text-accent group-hover/article:gap-3 transition-all">
+                      Continue reading <ArrowUpRight className="h-4 w-4" />
                     </span>
                   </div>
                 </div>
               </div>
             </Link>
           </motion.article>
+
+          {/* RIGHT — Book (4 cols, vertical poster) */}
+          <motion.aside
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7, delay: 0.15 }}
+            className="lg:col-span-4 group/book relative flex flex-col"
+          >
+            <div className="relative h-full rounded-[2rem] overflow-hidden border border-white/10 bg-gradient-to-b from-card/60 via-card/30 to-card/60 backdrop-blur-sm p-7 md:p-8 transition-all duration-500 group-hover/book:border-purple-400/40">
+              {/* Vertical spine label */}
+              <div className="absolute right-3 top-8 bottom-8 flex items-center">
+                <span className="font-mono text-[10px] uppercase tracking-[0.4em] text-muted-foreground rotate-180" style={{ writingMode: "vertical-rl" }}>
+                  № 02 — Featured Book
+                </span>
+              </div>
+
+              <div className="flex items-center gap-2 mb-6">
+                <BookOpen className="h-4 w-4 text-purple-400" />
+                <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-purple-300">
+                  Non-Fiction
+                </span>
+              </div>
+
+              {/* Book cover with floating shadow */}
+              <div className="relative mx-auto w-[78%] aspect-[3/4] mb-6">
+                <div aria-hidden className="absolute inset-0 translate-y-6 scale-95 rounded-xl bg-purple-500/30 blur-2xl" />
+                <div className="relative h-full rounded-lg overflow-hidden border border-white/10 shadow-[0_30px_60px_-15px_rgba(0,0,0,0.6)] transition-transform duration-700 group-hover/book:-translate-y-2 group-hover/book:rotate-[-2deg]">
+                  <img
+                    src={bookCover}
+                    alt="The Self as Witness"
+                    loading="lazy"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+              </div>
+
+              {/* Title */}
+              <div className="text-center">
+                <h3 className="font-display font-bold text-xl md:text-2xl leading-tight">
+                  The Self as Witness
+                </h3>
+                <p className="mt-1.5 text-[11px] text-accent italic px-2">
+                  Subject and suspect in its own gaze.
+                </p>
+                <p className="mt-2 font-mono text-[10px] uppercase tracking-[0.25em] text-muted-foreground">
+                  By Muhammad Raza
+                </p>
+              </div>
+
+              {/* Benefits — minimal vertical list */}
+              <div className="mt-6 space-y-2.5">
+                {[
+                  "Recognize the inner adversary",
+                  "Cultivate deep self-awareness",
+                  "A framework for inner mastery",
+                ].map((b, i) => (
+                  <div key={b} className="flex items-start gap-3 text-xs">
+                    <span className="font-mono text-accent font-bold mt-px">0{i + 1}</span>
+                    <span className="text-muted-foreground leading-relaxed">{b}</span>
+                  </div>
+                ))}
+              </div>
+
+              <a
+                href="/contact"
+                className="mt-7 inline-flex items-center justify-center gap-2 w-full rounded-full border border-accent/40 bg-accent/10 text-accent px-5 py-2.5 text-sm font-semibold hover:bg-accent hover:text-accent-foreground transition-all"
+              >
+                Get the Book <ArrowUpRight className="h-4 w-4" />
+              </a>
+            </div>
+          </motion.aside>
         </div>
       </div>
     </section>
